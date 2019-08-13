@@ -1,0 +1,104 @@
+@import "colors";
+
+body {
+  font-family: "Noto Sans", "Lexend Deca", "Red Hat Text", sans-serif;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.hero-prop {
+  font-family: "Red Hat Text";
+  font-size: 55px;
+  line-height: 50px;
+  padding: 10px 0;
+  color: rgba($color: #fff, $alpha: 1);
+}
+
+.hero-prop-subtitle {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  line-height: 25px;
+  padding: 10px 0;
+  color: rgba($color: #fff, $alpha: 0.9);
+}
+
+.hero-prop-black {
+  font-family: "Red Hat Text";
+  font-size: 45px;
+  line-height: 40px;
+  padding: 10px 0;
+  color: rgba($color: #180317, $alpha: 1);
+}
+
+.hero-prop-subtitle-black {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  line-height: 25px;
+  padding: 10px 0;
+  color: rgba($color: #180317, $alpha: 0.6);
+}
+
+.sign-up-header {
+  font-family: "Red Hat Text";
+  display: block;
+  color: rgba($color: #fff, $alpha: 0.8);
+  padding: 10px;
+}
+
+.sign-up-subtitle {
+  font-family: "Noto Sans";
+  display: block;
+  color: rgba($color: #fff, $alpha: 0.8);
+  padding: 10px;
+}
+
+.hero-form-prompt {
+  display: block;
+  font-size: 12px;
+  padding: 5px 0;
+  border-radius: 3px;
+  color: rgba($color: #fff, $alpha: 0.8);
+}
+
+.home-header {
+  font-family: "Red Hat Text";
+  font-size: 25px;
+  display: block;
+  padding: 50px;
+}
+.how-prompt {
+  font-family: "Red Hat Text";
+  font-size: 17px;
+  padding: 20px;
+  color: rgba($color: #fff, $alpha: 0.8);
+}
+
+.how-text {
+  font-family: "Noto Sans";
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px;
+  color: rgba($color: #fff, $alpha: 0.7);
+}
+
+.faq-heading {
+  font-family: "Red Hat Text";
+  font-size: 17px;
+  color: rgba($color: #180317, $alpha: 1);
+  padding-bottom: 10px;
+}
+
+.faq-answer {
+  font-size: 13px;
+  font-family: "Noto Sans";
+}
+
+.footer-contact {
+  font-family: "Red Hat Text";
+  font-size: 17px;
+  line-height: 20px;
+  padding: 10px 0;
+  color: rgba($color: #fff, $alpha: 0.9);
+}

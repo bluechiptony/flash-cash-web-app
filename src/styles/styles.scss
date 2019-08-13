@@ -1,0 +1,22 @@
+@import "reset";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "colors";
+@import "measures";
+@import "text";
+@import "vars";
+@import "elements";
+
+.bg-hero {
+  background-image: url("../assets/imgs/hero-bg.jpg");
+  background-size: cover;
+}
+.bg-fine-girl {
+  background-image: url("../assets/imgs/fine-girl.jpg");
+  background-size: cover;
+}
+
+.fix-header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}

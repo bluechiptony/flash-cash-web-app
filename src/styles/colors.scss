@@ -1,0 +1,46 @@
+$mainPurpleLight: #3348ce;
+$mainPurple: #334ecd;
+// $mainPurpleDarker: #0e1a4e;
+$mainPurpleDarker: #330531;
+$pinkRed: #d81159;
+$brightRed: #bb1a1a;
+$appGreen: #32a323;
+$appAssignPurple: #2a44b8;
+
+$sharpYellow: #fcba04;
+$white: rgba(255, 255, 255, 1);
+
+.bg-purp {
+  background-color: $mainPurpleDarker;
+}
+.bg-dark-purp {
+  background-color: #180317;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-input-purp {
+  background-color: #9fa8ce;
+}
+
+.bg-app-darker {
+  background-color: #f7f7f7;
+}
+
+.bg-signup-box {
+  background-color: rgba($color: #180317, $alpha: 0.6);
+  // 51,5,49, 0.2
+}
+
+.text-white {
+  color: $white;
+}
+.text-dark-purp {
+  color: #180317;
+}
+
+.bg-footer {
+  background-color: #180116;
+}

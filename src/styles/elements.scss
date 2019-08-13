@@ -1,0 +1,114 @@
+@import "colors";
+@import "vars";
+
+.simple-flex {
+  display: flex;
+  align-items: center;
+}
+
+.centered-flex {
+  @extend .simple-flex;
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.block {
+  display: block;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  display: block;
+  box-sizing: border-box;
+  padding: 20px;
+  border: 0;
+  color: rgba($color: #fff, $alpha: 1);
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #180317;
+  box-shadow: 0 0 35px 0 rgba(24, 3, 23, 0.3);
+  @include appTransition();
+}
+.hero-button-sign {
+  display: block;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 0;
+  min-width: 60%;
+  color: rgba($color: #fff, $alpha: 1);
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: #180317;
+  box-shadow: 0 0 35px 0 rgba(24, 3, 23, 0.3);
+  @include appTransition();
+}
+.hero-button-sign:hover,
+.hero-button:hover {
+  background-color: #440442;
+}
+
+.signup-box {
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.hero-form-input {
+  display: block;
+  width: 100%;
+  padding: 15px 15px;
+  font-family: "Noto Sans";
+  font-size: 14px;
+  border: 0;
+  background-color: rgba(24, 3, 23, 0.8);
+  color: rgba($color: #fff, $alpha: 0.7);
+}
+
+.how-to-box {
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+.faq-box {
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 0 35px 0 rgba(24, 3, 23, 0.123);
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+
+.footer-container {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.footer-copy {
+  position: absolute;
+  bottom: 20px;
+  font-size: 12px;
+}
+
+.contact-section {
+  padding: 10px 0px;
+  .contact-header {
+    font-family: "Red Hat Text";
+    font-weight: 700;
+    display: block;
+    font-size: 14px;
+    padding: 5px 0;
+    color: rgba($color: #fff, $alpha: 0.8);
+  }
+  .contact-text {
+    font-size: 12px;
+    padding: 5px 0;
+    color: rgba($color: #fff, $alpha: 0.7);
+  }
+}
