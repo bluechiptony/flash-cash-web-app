@@ -23,6 +23,19 @@
   margin-bottom: 20px;
 }
 
+.app-input {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 0;
+  padding: 16px 10px;
+}
+
+.search-text-box {
+  @extend .app-input;
+  width: 350px;
+}
+
 .hero-button {
   display: block;
   box-sizing: border-box;
@@ -111,4 +124,12 @@
     padding: 5px 0;
     color: rgba($color: #fff, $alpha: 0.7);
   }
+}
+
+.page-content-holder {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.page-content-height {
+  padding-top: 30px;
 }

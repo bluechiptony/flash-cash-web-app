@@ -32,6 +32,12 @@ body {
   color: rgba($color: #180317, $alpha: 1);
 }
 
+.route-heading {
+  font-family: "Red Hat Text";
+  font-size: 28px;
+  font-weight: 600;
+}
+
 .hero-prop-subtitle-black {
   font-family: "Noto Sans";
   font-size: 14px;
@@ -93,6 +99,7 @@ body {
 .faq-answer {
   font-size: 13px;
   font-family: "Noto Sans";
+  line-height: 20px;
 }
 
 .footer-contact {

@@ -1,8 +1,21 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 
 import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { NgxPageScrollModule } from "ngx-page-scroll";
+
+import { ToastrModule } from "ngx-toastr";
+import { CookieService } from "ngx-cookie-service";
+import { HttpClientModule } from "@angular/common/http";
+import { DatePipe, CurrencyPipe } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
+//import material components
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { MatTableModule } from "@angular/material/table";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatTabsModule } from "@angular/material/tabs";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -20,6 +33,17 @@ import { HomeValuePropComponent } from "./home/home-value-prop/home-value-prop.c
 import { HomeHowToComponent } from "./home/home-how-to/home-how-to.component";
 import { FaqComponent } from "./home/faq/faq.component";
 import { FooterComponent } from "./footer/footer.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DashboardHeaderComponent } from "./dashboard-header/dashboard-header.component";
+import { OverviewComponent } from "./overview/overview.component";
+import { TransactionsComponent } from "./transactions/transactions.component";
+import { AppService } from "./application/services/app.service";
+import { DataService } from "./application/services/data.service";
+import { ValueAcquisitionTableComponent } from "./tables/value-acquisition-table/value-acquisition-table.component";
+import { ValueCheckoutTableComponent } from "./tables/value-checkout-table/value-checkout-table.component";
+import { ValueTransferTableComponent } from "./tables/value-transfer-table/value-transfer-table.component";
+import { TicketsComponent } from "./tickets/tickets.component";
+import { TicketComponent } from "./ticket/ticket.component";
 
 @NgModule({
   declarations: [
@@ -37,10 +61,34 @@ import { FooterComponent } from "./footer/footer.component";
     HomeValuePropComponent,
     HomeHowToComponent,
     FaqComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    DashboardHeaderComponent,
+    OverviewComponent,
+    TransactionsComponent,
+    ValueAcquisitionTableComponent,
+    ValueCheckoutTableComponent,
+    ValueTransferTableComponent,
+    TicketsComponent,
+    TicketComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, NgxPageScrollCoreModule, NgxPageScrollModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    // MatCheckboxModule,
+    MatTabsModule
+  ],
+  providers: [AppService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
