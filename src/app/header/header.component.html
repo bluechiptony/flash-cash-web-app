@@ -70,6 +70,10 @@
           <li class="nav-item">
             <a pageScroll href="#contact" class="nav-link">Contact Us</a>
           </li>
+          <li class="nav-item">
+            <!-- <button class="header-button text-white" (click)="openLoginModal()">Login</button> -->
+            <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="nav-link text-white link-up link-button">Sign In</a>
+          </li>
         </ul>
 
         <!-- <ul class="navbar-nav pull-right ml-auto " style="float:right;">

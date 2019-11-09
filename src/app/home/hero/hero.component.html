@@ -12,25 +12,30 @@
     </div>
     <div class="col-lg-7 hero-height centered-flex">
       <div class="signup-box col-lg-6 bg-signup-box">
-        <div class="center-text">
-          <span class="sign-up-header">Sign up</span>
-          <span class="sign-up-subtitle">Please give us your information</span>
-        </div>
-        <div class="form-row">
-          <span class="hero-form-prompt">Full Name</span>
-          <input type="text" class="hero-form-input" placeholder="e.g John Doe" />
-        </div>
-        <div class="form-row">
-          <span class="hero-form-prompt">Email Address</span>
-          <input type="text" class="hero-form-input" placeholder="e.g john.doe@gmail.com" />
-        </div>
-        <div class="form-row">
-          <span class="hero-form-prompt">Phone Number</span>
-          <input type="text" class="hero-form-input" placeholder="e.g 080233849237" />
-        </div>
-        <div class="form-row centered-flex">
-          <button class="hero-button-sign">Sign Up</button>
-        </div>
+        <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+          <div class="center-text">
+            <span class="sign-up-header">Sign up</span>
+            <span class="sign-up-subtitle">Please give us your information</span>
+          </div>
+          <div class="form-row">
+            <span class="hero-form-prompt">Full Name</span>
+            <input type="text" class="hero-form-input" placeholder="e.g John Doe" formControlName="fullName" />
+          </div>
+          <div class="form-row">
+            <span class="hero-form-prompt">Email Address</span>
+            <input type="text" class="hero-form-input" placeholder="e.g john.doe@gmail.com" formControlName="emailAddress" />
+          </div>
+          <div class="form-row">
+            <span class="hero-form-prompt">Phone Number</span>
+            <input type="text" class="hero-form-input" placeholder="e.g 080233849237" formControlName="phoneNumber" />
+          </div>
+          <div class="form-row centered-flex">
+            <button class="hero-button-sign" type="submit">
+              <span *ngIf="loading"><i class="fa fa-spin fa-spinner"></i></span>
+              <span *ngIf="!loading">Sign Up</span>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -1,0 +1,86 @@
+<div class="bg-purp">
+  <div class="col-lg-10 offset-lg-1 col-sm-12">
+    <nav class="navbar navbar-expand-sm ">
+      <a href="" class="navbar-brand"><img src="assets/imgs/flash-cash-tight-white.png" height="25" alt=""/></a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon "> <i class="fa fa-bars link-up text-white"></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a [routerLink]="['overview']" routerLinkActive="router-link-active" class="nav-link">My Overview</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdownMenuLink2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >My Transctions</a
+            >
+            <div class="dropdown-menu bg-purp text-white" aria-labelledby="navbarDropdownMenuLink2">
+              <a class="dropdown-item link-up" [routerLink]="['transactions', 'value-acquisition']" routerLinkActive="router-link-active">Value Acquisitions</a>
+              <a class="dropdown-item link-up" [routerLink]="['transactions', 'value-transfer']" routerLinkActive="router-link-active">Value Exchange</a>
+              <a class="dropdown-item link-up" [routerLink]="['transactions', 'value-checkout']" routerLinkActive="router-link-active">Checkouts</a>
+            </div>
+          </li>
+          <li class="nav-item"></li>
+          <!-- <li class="nav-item">
+                  <a
+                    [routerLink]="['solutions']"
+                    routerLinkActive="router-link-active"
+                    class="nav-link"
+                    >Solutions</a
+                  >
+                  <li class="nav-item"></li>
+                </li> -->
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdownMenuLink2"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Support</a
+            >
+            <div class="dropdown-menu bg-purp text-white" aria-labelledby="navbarDropdownMenuLink2">
+              <a class="dropdown-item link-up" [routerLink]="['tickets']" routerLinkActive="router-link-active">All Tickets</a>
+              <a class="dropdown-item link-up" [routerLink]="['open-tickets']" routerLinkActive="router-link-active">Open Tickets</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown ">
+            <a
+              class="nav-link dropdown-toggle text-white"
+              href="#"
+              id="navbarDropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-user"></i>&nbsp; {{ loggedInUser?.firstName }}
+              {{ loggedInUser?.lastName }}
+            </a>
+            <div class="dropdown-menu bg-purp text-white" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item link-up" (click)="openProfileModal()">Profile</a>
+
+              <a class="dropdown-item link-up" (click)="logOut()">Logout</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- <ul class="navbar-nav pull-right ml-auto " style="float:right;"></ul> -->
+      </div>
+      <!-- <div class="collapse navbar-collapse pull-right" id="collapsibleNavbar">
+                    
+                  </div> -->
+    </nav>
+  </div>
+</div>

@@ -1,1 +1,51 @@
-<p>login works!</p>
+<div class="container-fluid ">
+  <div class="row full-page bg-purp centered-flex">
+    <div class="col-lg-4 col-xs-10">
+      <div class="login-box bg-white">
+        <div class="center-text">
+          <div>
+            <img src="assets/imgs/flash-cash-logo.png" width="150" alt="" />
+            <span class="login-title">Account login</span>
+            <span class="">Please enter your login details</span>
+          </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+          <div class="form-row">
+            <input type="text" class="login-input bg-input-purp " placeholder="Email Address" formControlName="emailAddress" />
+            <div class="animated fadeIn" *ngIf="submitted && emailAddress.invalid">
+              <span class="error-text-red" *ngIf="emailAddress.errors.required">
+                Pleae enter your email address
+              </span>
+              <span class="error-text-red" *ngIf="emailAddress.errors.pattern">
+                Pleae enter a valid email address
+              </span>
+            </div>
+          </div>
+          <div class="form-row">
+            <input type="password" class="login-input bg-input-purp " placeholder="Password" formControlName="password" />
+            <div class="animated fadeIn" *ngIf="submitted && password.invalid">
+              <span class="error-text-red" *ngIf="password.errors.required">
+                Pleae enter your password
+              </span>
+            </div>
+          </div>
+          <div class="center-text form-row animated fadeIn" *ngIf="hasLoginError">
+            <span class="error-text-red">{{ loginError }}</span>
+          </div>
+          <div class="form-row centered-flex">
+            <span class=""
+              >Forgot your password? &nbsp;
+              <span class="link-up" [routerLink]="['forgot-password']" routerLinkActive="router-link-active">Click Here</span></span
+            >
+          </div>
+          <div class="form-row centered-flex">
+            <button class="login-button uppercase bg-purp" type="submit">
+              login
+              <span *ngIf="loading"> &nbsp; <i class="fa fa-spin fa-spinner"></i> </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

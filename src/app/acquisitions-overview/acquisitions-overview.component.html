@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <span class="overview-header">Value Acquisitions</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="transaction-container" *ngFor="let acquisition of acquisitions">
+        <span class="form-prompt">Reference</span>
+        <span class="reference block">{{ acquisition.transactionReference }}</span>
+        <div class="block">
+          <span class="trans-amount text-credit"> + {{ acquisition.amount }}</span>
+          <span class="trans-date pull-right"> {{ acquisition.createdDate | date: "mediumDate" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 right-text">
+      <span class="overview-link" [routerLink]="['/home', 'transactions', 'value-acquisition']" routerLinkActive="router-link-active">See All</span>
+    </div>
+  </div>
+</div>

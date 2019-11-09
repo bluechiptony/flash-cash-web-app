@@ -43,3 +43,14 @@
   color: rgba($color: $white, $alpha: 0.7);
   color: rgba($color: $white, $alpha: 0.7);
 }
+
+.link-button {
+  padding: 10px 20px;
+  border: 0.5px solid rgba($color: $white, $alpha: 0.7);
+  background-color: rgba($color: $white, $alpha: 0);
+  @include appTransition();
+}
+
+.link-button :hover {
+  background-color: rgba($color: $white, $alpha: 0.7);
+}

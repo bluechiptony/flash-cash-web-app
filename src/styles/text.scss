@@ -8,6 +8,13 @@ body {
   text-transform: capitalize;
 }
 
+.right-text {
+  text-align: right;
+}
+
+.center-text {
+  text-align: center;
+}
 .hero-prop {
   font-family: "Red Hat Text";
   font-size: 55px;
@@ -108,4 +115,52 @@ body {
   line-height: 20px;
   padding: 10px 0;
   color: rgba($color: #fff, $alpha: 0.9);
+}
+.form-prompt {
+  display: block;
+  font-size: 12px;
+  padding: 5px 0;
+  color: rgba($color: rgb(53, 53, 53), $alpha: 0.8);
+}
+
+.drop-down-subtitle {
+  font-size: 13px;
+}
+
+.mega-balance {
+  font-size: 40px;
+  font-weight: 300;
+  font-family: "Red Hat Text";
+}
+
+.payment-confirm-data {
+  display: block;
+  font-size: 20px;
+  font-family: "Red Hat Text";
+}
+
+.overview-header {
+  font-family: "Red Hat Text";
+  font-size: 16px;
+}
+
+.overview-link {
+  display: inline-block;
+  cursor: pointer;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.text-credit {
+  color: rgb(11, 154, 106);
+}
+
+.text-debit {
+  color: #ac0909;
+}
+
+.login-title {
+  display: block;
+  font-size: 25px;
+  padding-bottom: 20px;
 }

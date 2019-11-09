@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="col-lg-12 section-top-padding">
+    <div class="" *ngIf="showForm">
+      <form [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+        <div class="form-row">
+          <span>Make Payment</span>
+        </div>
+        <div class="form-row">
+          <span class="form-prompt block">Select Beneficiary</span>
+          <ng-select
+            class="block"
+            placeholder="Select Beneficiary"
+            [items]="beneficiaries"
+            labelForId="accountNumber"
+            bindLabel="fullName"
+            (search)="loadBeneficiaries($event)"
+            (change)="onChange($event)"
+            formControlName="beneficiary"
+          >
+            <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+              <div>
+                <span>Beneficiary: </span><span [ngOptionHighlight]="search">{{ item.fullName }}</span>
+              </div>
+              <small class="drop-down-subtitle"><b>Account Number:</b> {{ item.accountNumber }} </small>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="form-row">
+          <span class="form-prompt block">Enter Amount</span>
+          <input type="number" class="app-form-input" placeholder="1000" formControlName="amount" />
+        </div>
+        <div class="form-row block">
+          <button class="app-button-sign pull-right" type="submit">Pay</button>
+        </div>
+      </form>
+    </div>
+    <div class="" *ngIf="showConfirm">
+      <div class="form-row block">
+        <span>Confirm Payment</span>
+        <span class="pull-right" style="float:right;"><i class="fa fa-close link-up" (click)="cancelPayment()"></i></span>
+      </div>
+      <div class="form-row">
+        <span class="form-prompt ">Beneficiary Name</span>
+        <span class="payment-confirm-data block">{{ payment.beneficiary.fullName }}</span>
+      </div>
+      <div class="form-row">
+        <span class="form-prompt">Beneficiary Account</span>
+        <span class="payment-confirm-data block">{{ payment.beneficiary.accountNumber }}</span>
+      </div>
+
+      <div class="form-row">
+        <span class="form-prompt block">Amount </span>
+        <span class="payment-confirm-data block">{{ payment.amount }}</span>
+      </div>
+      <div class="form-row block">
+        <button class="app-button-sign pull-right" (click)="processPayment()">
+          <span *ngIf="processingPayment">Processing payment<i class="fa fa-spin fa-spinner"></i></span>
+          <span *ngIf="!processingPayment">Pay</span>
+        </button>
+      </div>
+    </div>
+    <div class="" *ngIf="showError">
+      <div class="form-row">
+        <span>Notice</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,11 +5,15 @@ import { NgModule } from "@angular/core";
 import { NgxPageScrollCoreModule } from "ngx-page-scroll-core";
 import { NgxPageScrollModule } from "ngx-page-scroll";
 
+import { NgSelectModule } from "@ng-select/ng-select";
+import { NgOptionHighlightModule } from "@ng-select/ng-option-highlight";
+
+import { Angular4PaystackModule } from "angular4-paystack";
 import { ToastrModule } from "ngx-toastr";
 import { CookieService } from "ngx-cookie-service";
 import { HttpClientModule } from "@angular/common/http";
 import { DatePipe, CurrencyPipe } from "@angular/common";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 //import material components
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
@@ -44,6 +48,12 @@ import { ValueCheckoutTableComponent } from "./tables/value-checkout-table/value
 import { ValueTransferTableComponent } from "./tables/value-transfer-table/value-transfer-table.component";
 import { TicketsComponent } from "./tickets/tickets.component";
 import { TicketComponent } from "./ticket/ticket.component";
+import { SwiftPayComponent } from "./swift-pay/swift-pay.component";
+import { BalanceComponent } from "./balance/balance.component";
+import { AcquisitionsOverviewComponent } from "./acquisitions-overview/acquisitions-overview.component";
+import { TransfersOverviewComponent } from "./transfers-overview/transfers-overview.component";
+import { CashoutsOverviewComponent } from "./cashouts-overview/cashouts-overview.component";
+import { LoginModalComponent } from "./modals/login-modal/login-modal.component";
 
 @NgModule({
   declarations: [
@@ -70,7 +80,13 @@ import { TicketComponent } from "./ticket/ticket.component";
     ValueCheckoutTableComponent,
     ValueTransferTableComponent,
     TicketsComponent,
-    TicketComponent
+    TicketComponent,
+    SwiftPayComponent,
+    BalanceComponent,
+    AcquisitionsOverviewComponent,
+    TransfersOverviewComponent,
+    CashoutsOverviewComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +94,8 @@ import { TicketComponent } from "./ticket/ticket.component";
     AppRoutingModule,
     NgxPageScrollCoreModule,
     NgxPageScrollModule,
+    NgSelectModule,
+    FormsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
@@ -86,9 +104,12 @@ import { TicketComponent } from "./ticket/ticket.component";
     MatPaginatorModule,
     MatDialogModule,
     // MatCheckboxModule,
-    MatTabsModule
+    Angular4PaystackModule,
+    MatTabsModule,
+    NgOptionHighlightModule
   ],
   providers: [AppService, DataService],
+  entryComponents: [LoginModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

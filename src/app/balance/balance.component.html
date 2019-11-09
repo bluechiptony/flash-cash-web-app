@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="col-lg-12">
+    <div class="block right-text section-top-padding">
+      <span class="form-prompt">
+        Current Balance
+      </span>
+      <span class="mega-balance">
+        {{ account?.balance | currency: "₦ " }}
+      </span>
+      <span class="form-prompt"> Account Number: {{ account?.accountNumber }} </span>
+      <span class="pointer link-up pull-left" (click)="showRechargeChange()">
+        Recharge Balance
+      </span>
+      <span class="pointer link-up" (click)="showCheckoutChange()">
+        Checkout
+      </span>
+    </div>
+    <div class="animated fadeIn" *ngIf="showCheckout">
+      <form [formGroup]="checkOutForm" (ngSubmit)="submitCheckout()">
+        <div class="form-row">
+          <span class="form-prompt block">Enter Checkout Amount</span>
+          <input type="number" class="app-form-input" placeholder="1000" formControlName="amount" />
+        </div>
+        <div class="form-row">
+          <button type="submit">
+            Checkout
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="animated fadeIn" *ngIf="showRecharge">
+      <div class="form-row">
+        <span class="form-prompt block">Enter Recharge Amount</span>
+        <input type="number" class="app-form-input" placeholder="1000" (change)="handleChange($event)" />
+      </div>
+      <div class="form-row">
+        <button
+          angular4-paystack
+          [key]="paystackPayment.pkey"
+          [email]="paystackPayment.email"
+          [amount]="paystackPayment.amount"
+          [ref]="paystackPayment.ref"
+          [class]="'btn btn-primary'"
+          (close)="paymentCancel()"
+          (callback)="paymentDone($event)"
+        >
+          Recharge
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <span class="overview-header">Value Transfers</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="transaction-container" *ngFor="let transfer of transfers">
+        <span class="form-prompt">Reference</span>
+        <span class="reference block">{{ transfer.transactionReference }}</span>
+        <div class="block">
+          <span
+            class="trans-amount "
+            [ngClass]="{
+              'text-debit': !transfer.isCredit,
+
+              'text-credit ': transfer.isCredit
+            }"
+          >
+            <span *ngIf="!transfer.isCredit; else creditTemp"> - </span> <ng-template #creditTemp> + </ng-template> {{ transfer.amount }}</span
+          >
+          <span class="trans-date pull-right"> {{ transfer.createdDate | date: "mediumDate" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 right-text">
+      <span class="overview-link" [routerLink]="['/home', 'transactions', 'value-transfer']" routerLinkActive="router-link-active">See All</span>
+    </div>
+  </div>
+</div>
