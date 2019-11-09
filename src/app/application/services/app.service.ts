@@ -10,7 +10,8 @@ export class AppService {
   KEY_CURRENT_USER = "current_user";
   LOGGED_IN_USER_TOKEN = "logged_in_user_token";
 
-  public BASE_URL = "http://localhost:5500";
+  // public BASE_URL = "http://localhost:5500";
+  public BASE_URL = "https://api.flashcash.com.ng";
   public emailRegex: RegExp = RegExp(
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
   );
