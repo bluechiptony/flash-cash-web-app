@@ -22,4 +22,6 @@ export class DashboardHeaderComponent implements OnInit {
     this.loggedInUser = this.app.getLoggedInUser();
     console.log(this.loggedInUser);
   }
+
+  openProfileModal() {}
 }
